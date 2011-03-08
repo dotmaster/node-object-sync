@@ -117,7 +117,7 @@ class ObjectSync extends (require 'nodeBase' )
   _onConnect: (client) =>
     @emit 'connect', client.sessionId
   
-  __broadcast: (response) ->
+  __broadcast: (response, except) ->
     for own clientId, client of @clients
       if not except or (typeof except is 'number' or typeof except is 'string') and  clientId isnt except\
         or (Array.isArray(except) and except.indexOf(clientId) isnt -1)
