@@ -1,4 +1,4 @@
-socket_io = require 'filtered-socket.io'
+socket_io = require 'socket.io'
 Filter = require './filter'
 _ = require './underscore' #needed for isEqual deep equality testing
 

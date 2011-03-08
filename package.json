@@ -15,8 +15,8 @@
     ],
     "main": "./index.js",
     "dependencies": {
-        "coffee-script": ">= 1.0.0",
+        "coffee-script": ">= 0.0.1",
         "nodeBase": ">= 0.5.4"
-        //"filtered-socket.io": ">=0.0.1" //already included in node_modules
+        //"socket.io": ">=0.6.15" //already included in node_modules
     }
 }
