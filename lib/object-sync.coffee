@@ -118,13 +118,13 @@ class ObjectSync extends (require 'nodeBase' )
     @emit 'connect', client.sessionId
   
   __broadcast: (response, except) ->
-    for own clientId, client of @clients
+    for own clientId, client of @_clients
       if not except or (typeof except is 'number' or typeof except is 'string') and  clientId isnt except\
         or (Array.isArray(except) and except.indexOf(clientId) isnt -1)
           @_sendFiltered(client, response)
           
   _sendFiltered: (client, message) ->
-    if @filter client.filters, message
+    if @_filter client.filters, message
       client.send message
     else @log 'message #{message} filtered out from client #{client.sessionId}', client, message
   
