@@ -8,8 +8,9 @@ class Filter extends (require 'nodeBase' )
     @id = Filter.uuid()
     @filter = filter
   test: (message) =>
+    if typeof filter is 'string' then return message is filter #channel
     for attr, val of @filter
-      if typeof val is "object"
+      if typeof val is "object"  
         for predicate, val of val
           if not _test predicate, val, message[attr] then return false
       else if not message[attr] is value then return false
