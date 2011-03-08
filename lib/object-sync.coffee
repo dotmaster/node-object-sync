@@ -170,7 +170,7 @@ class ObjectSync extends (require 'nodeBase' )
       if _.isEqual(_f.filter, filter) then f=_f; break for _f in filters
     if not f? 
       return @warn 'filter to remove was not in list of filters for client', JSON.stringify filter;
-    delete filters[filter.id];
+    delete filters[f.id];
     @info "Client #{client.sessionId}  unregistered for receiving messages from filter ", JSON.stringify filter
     client_cb null, f, fire_event=true
     
