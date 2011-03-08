@@ -1,0 +1,3 @@
+[submodule "node_modules/filtered-socket.io"]
+	path = node_modules/filtered-socket.io
+	url = git@github.com:dotmaster/filtered-socket.io.git
